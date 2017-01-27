@@ -1,0 +1,1 @@
+hive -e "select user_screen_name from tweet where user_screen_name is not null group by user_screen_name HAVING count(*) > 500;" > /data/bots/usersGT500.txt

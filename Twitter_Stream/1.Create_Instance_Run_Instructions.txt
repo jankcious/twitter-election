@@ -1,0 +1,34 @@
+root@ec2-54-146-197-213.compute-1.amazonaws.com
+
+
+chmod a+rwx /data
+
+cd /data
+
+wget https://s3.amazonaws.com/ucbdatasciencew205/setup_ucb_complete_plus_postgres.sh
+
+chmod +x ./setup_ucb_complete_plus_postgres.sh
+
+
+./setup_ucb_complete_plus_postgres.sh /dev/xvdf
+
+
+
+pip install tweepy
+pip install boto
+
+
+mkdir twitterdata
+
+* copy the python script and credential files
+
+
+cd /data/twitterdata 
+python streamTwitterDataS3.py > output.txt 2>&1 &
+
+
+pgrep -lf python
+
+
+to get size of directory
+du -sh
